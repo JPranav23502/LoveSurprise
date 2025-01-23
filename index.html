@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For My Love</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f7f7f7;
+    }
+    .container {
+      text-align: center;
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .text-field {
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      width: 80%;
+      max-width: 300px;
+      margin-bottom: 10px;
+    }
+    .btn {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: #ff4081;
+      color: white;
+      border: none;
+      border-radius: 4px;
+    }
+    .btn:hover {
+      background-color: #e33370;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>My Love, What do I call you?</h1>
+    <input type="text" id="name" class="text-field" placeholder="Enter your name" required>
+    <br>
+    <button class="btn" onclick="openLovePage()">Submit</button>
+  </div>
+
+  <script>
+    function openLovePage() {
+      const name = document.getElementById('name').value.trim();
+      const correctName = "Wifey";
+      if (name.toLowerCase() === correctName.toLowerCase()) {
+        // If the name matches, open loveMessage.html
+        window.location.href = `loveMessage.html?name=${encodeURIComponent(name)}`;
+      } else {
+        // If the name doesn't match, show an alert
+        alert("Sorry, this message is for someone special. Try again.");
+      }
+    }
+  </script>
+
+</body>
+</html>
